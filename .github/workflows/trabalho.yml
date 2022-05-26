@@ -1,0 +1,18 @@
+name: Build app Ionic
+on: [push]
+jobs:
+  Build-App-Ionic:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out do repositório
+        uses: actions/checkout@v3
+      - name: Configura a versão do Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16
+      - name: Instalar o Node
+        run: npm install -g @ionic/cli
+      - name: Checkar versão Ionic
+        run: ionic -info
+      - name: Rodar build Ionic
+        run: ionic build
