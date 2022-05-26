@@ -10,13 +10,19 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: 16
-      - name: Cache node_modules
-        uses: actions/cache@v2
-        with:
-          path: ~/.npm
-          key: ${{runner.os}}-node-${{ hasFiles('**/package-lock.json') }}
-          restore-keys: ${{ runner.os }}-node-
-      - name: Instalar e fazer Build
-        run: |
-          npm install
-          npm run build
+      # - name: Cache node_modules
+      #   uses: actions/cache@v2
+      #   with:
+      #     path: ~/.npm
+      #     key: ${{runner.os}}-node-${{ hasFiles('**/package-lock.json') }}
+      #     restore-keys: ${{ runner.os }}-node-
+      - name: Instalar Ionic
+        run: npm install -g @ionic/cli
+      - name: Ver versão Ionic
+        run: ionic info
+      - name: Fazer build
+        run: ionic build
+      # - name: Instalar e fazer Build
+      #   run: |
+      #     npm install
+      #     npm run build
