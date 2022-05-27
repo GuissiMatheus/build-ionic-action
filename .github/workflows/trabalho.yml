@@ -24,6 +24,8 @@ jobs:
         run: npm i -g -D -E @angular/cli
       # - name: Ver versão Angular
       #   run: ng version
+      - name: Instalar dependências
+        run: npm install
       - name: Fazer build
         run: ionic build
       # - name: Instalar e fazer Build
