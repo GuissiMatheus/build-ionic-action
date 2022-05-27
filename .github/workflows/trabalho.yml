@@ -18,12 +18,12 @@ jobs:
       #     restore-keys: ${{ runner.os }}-node-
       - name: Instalar Ionic
         run: npm install -g @ionic/cli
-      - name: Ver versão Ionic
-        run: ionic info
+      # - name: Ver versão Ionic
+      #   run: ionic -info
       - name: Instalar Angular
-        run: npm i -D -E @angular/cli
-      - name: Ver versão Angular
-        run: ng version
+        run: npm i -g -D -E @angular/cli
+      # - name: Ver versão Angular
+      #   run: ng version
       - name: Fazer build
         run: ionic build
       # - name: Instalar e fazer Build
